@@ -1,0 +1,36 @@
+function validAnagram(string1, string2){
+    if(string1.length != string2.length){
+        return false
+    }
+
+    let charCounter = {}
+    let charCounter2 = {}
+
+    for(let char of string1){
+        if(charCounter[char]){
+            charCounter[char] ++;
+        }
+        else{
+            charCounter[char] = 1
+        }
+    }
+
+    for(let ch of string2){
+        if(charCounter2[ch]){
+            charCounter2[ch] ++;
+        }
+        else{
+            charCounter2[ch] = 1
+        }
+    }
+
+    console.log(charCounter)
+    console.log(charCounter2)
+
+    if(charCounter != charCounter2){
+        return false
+    }
+    
+    return true
+}
+
